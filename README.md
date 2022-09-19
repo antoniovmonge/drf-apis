@@ -75,6 +75,14 @@ docker-compose -f local.yml run --rm django python manage.py createsuperuser
 docker-compose -f local.yml run --rm django coverage run -m pytest
 ```
 
+## Seed the database with Faker for develop
+
+This command create fake books to seed the database.
+
+```bash
+docker-compose -f local.yml run --rm django python manage.py create_books
+```
+
 ## Settings
 
 Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
