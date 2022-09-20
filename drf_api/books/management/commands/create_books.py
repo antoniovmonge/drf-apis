@@ -15,7 +15,7 @@ class Command(BaseCommand):
                 "This command cannot be run when any book exist, "
                 + "to guard against accidental use on production."
             )
-        self.stdout.write("Seeding database...")
+        self.stdout.write("Seeding database with books...")
         create_books()
         self.stdout.write("Done.")
 

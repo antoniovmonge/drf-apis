@@ -82,6 +82,7 @@ LOCAL_APPS = [
     "drf_api.users",
     "drf_api.books",
     "drf_api.apis",
+    "drf_api.todos",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
