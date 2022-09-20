@@ -109,9 +109,17 @@ Running type checks with mypy:
 
 To run the tests, check your test coverage, and generate an HTML coverage report:
 
-    coverage run -m pytest
-    coverage html
-    open htmlcov/index.html
+```bash
+docker-compose -f local.yml run --rm django coverage run -m pytest
+```
+
+```bash
+docker-compose -f local.yml run --rm django coverage html
+```
+
+```bash
+docker-compose -f local.yml run --rm django open htmlcov/index.html
+```
 
 #### Running tests with pytest
 
