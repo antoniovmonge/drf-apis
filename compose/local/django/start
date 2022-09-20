@@ -7,4 +7,5 @@ set -o nounset
 
 python manage.py migrate
 python manage.py create_local_user_and_admin
+python manage.py create_books
 uvicorn config.asgi:application --host 0.0.0.0 --reload
