@@ -70,9 +70,16 @@ docker-compose -f local.yml run --rm django python manage.py create_local_user_a
 ```
 
 ```bash
+docker-compose -f local.yml run --rm django python manage.py makemigrations (app)
 docker-compose -f local.yml run --rm django python manage.py migrate
 docker-compose -f local.yml run --rm django python manage.py createsuperuser
 docker-compose -f local.yml run --rm django coverage run -m pytest
+```
+
+## Change permission to be able to save/modified files or folder when access denied
+
+```bash
+sudo chown -R + "user" + "pwd"
 ```
 
 ## Seed the database with Faker for develop
@@ -95,7 +102,9 @@ Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings
 
 - To create a **superuser account**, use this command:
 
-    $ python manage.py createsuperuser
+```bash
+docker-compose -f local.yml run --rm django python manage.py createsuperuser
+```
 
 For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
 
@@ -121,9 +130,17 @@ docker-compose -f local.yml run --rm django coverage html
 docker-compose -f local.yml run --rm django open htmlcov/index.html
 ```
 
+#### Running tests with unittest
+
+```bash
+docker-compose -f local.yml run --rm django python manage.py test
+```
+
 #### Running tests with pytest
 
-    pytest
+```bash
+docker-compose -f local.yml run --rm django pytest
+```
 
 ### Live reloading and Sass CSS compilation
 
