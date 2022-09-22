@@ -8,6 +8,8 @@ from django.views.generic import TemplateView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
+# from drf_api.users.api.views import UserList, UserDetail
+
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
@@ -45,6 +47,8 @@ urlpatterns += [
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
     ),
+    # path("api/v1/users/", UserList.as_view()),
+    # path("api/v1/users/<int:pk>/", UserDetail.as_view()),
 ]
 
 if settings.DEBUG:
