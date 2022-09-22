@@ -32,6 +32,10 @@ urlpatterns += [
     path("api/books/", include("drf_api.apis.urls")),
     path("api/todos/", include("drf_api.todos.urls")),
     path("api/v1/posts/", include("drf_api.posts.urls")),
+    path("api/v1/dj-rest-auth/", include("dj_rest_auth.urls")),
+    path(
+        "api/v1/dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")
+    ),
     path("api-auth/", include("rest_framework.urls")),
     # DRF auth token
     path("auth-token/", obtain_auth_token),
